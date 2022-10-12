@@ -1,2 +1,49 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<section class="w-3/4 px-4 py-12 mx-auto border border-indigo-600">
+  <h1 class="mt-2 text-lg font-medium text-center text-gray-800">Homepage</h1>
+  <p class="mt-1 text-center text-gray-600">
+      <%= content_tag(:div, "", data: {
+        controller: "hello",
+      }) do %>
+
+      <input type="text" class="form-basic" data-hello-target="name">
+
+      <button type="button" 
+              data-action="click->hello#greet" 
+              data-mdb-ripple="true" 
+              data-mdb-ripple-color="light" 
+              class="btn">
+              Greet
+      </button>
+
+      <p class="mt-6" data-hello-target="output"></p>
+
+      <% end %>
+  </p>
+  <p class="mt-1 text-center text-gray-600">
+      <%= content_tag(:div, "", class: "mt-6", data: {
+        controller: "counter"
+      }) do %>
+            <%= content_tag(:p, "You haven't clicked the button!",
+                            data: {
+                              counter_target: "output"
+                            }) %>
+            <button data-action="click->counter#increment"
+                    type="button"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                    class="btn btn-primary">Increase</button>
+
+            <button data-action="click->counter#decrement"
+                    type="button"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                    class="btn btn-primary">Decrease</button>
+      <% end %>
+
+  </p>
+
+  <div class="flex flex-col items-end justify-center mt-4 space-y-1 md:flex-row md:space-y-0 md:space-x-1">
+    <a href="#" class="w-full md:w-auto btn btn-primary">Request access</a>
+    <a href="#" class="w-full md:w-auto btn btn-light">Import products</a>
+  </div>
+</section>

@@ -85,3 +85,13 @@ img, svg {
   width: 95%;
   @apply mx-auto py-10;
 }
+
+.form-basic {
+  @apply block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none;
+}
+
+
+.btn {
+  @apply inline-block mt-2 px-4 py-2 text-base font-normal leading-5 text-center text-white transition duration-150 ease-in-out bg-blue-600 border border-transparent rounded-md active:bg-blue-600 hover:bg-blue-700 focus:outline-none;
+}
+
